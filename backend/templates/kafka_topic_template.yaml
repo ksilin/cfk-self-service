@@ -1,0 +1,11 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: {{ topic_name }}
+  namespace: default
+spec:
+  partitions: {{ partitions }}
+  replicas: {{ replicas }}
+  config:
+    retention.ms: {{ retention_ms }}
+    cleanup.policy: "delete"
