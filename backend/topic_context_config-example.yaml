@@ -1,0 +1,4 @@
+namespace: new_topic-namespace
+prefix: new-topic-prefix-
+repository_name: your-org/topics-for-domain
+github_token: github_pat_1234567890
