@@ -4,8 +4,10 @@ metadata:
   name: {{ topic_name }}
   namespace: default
 spec:
-  partitions: {{ partitions }}
+  partitionCount: {{ partitions }}
   replicas: {{ replicas }}
-  config:
+  kafkaRestClassRef:
+    name: primary
+  configs:
     retention.ms: {{ retention_ms }}
     cleanup.policy: "delete"

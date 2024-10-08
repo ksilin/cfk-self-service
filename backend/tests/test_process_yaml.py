@@ -38,35 +38,27 @@ def config_file(tmp_path):
     return config_yaml_path
 
 def test_modify_topic_yaml_with_config(initial_yaml_file, config_file, tmp_path):
-    # Call the function to modify the topic YAML with the given configuration
     output_directory = tmp_path
     modify_topic_yaml_with_config(str(initial_yaml_file), str(output_directory), str(config_file))
 
-    # Check if the output file is created
     expected_filename = output_directory / "test-prefix-sample-topic.yaml"
     assert os.path.exists(expected_filename)
 
-    # Load the modified YAML file to check its content
     with open(expected_filename, 'r') as modified_file:
         modified_yaml = yaml.safe_load(modified_file)
 
-    # Assertions to check if namespace and prefix are applied correctly
     assert modified_yaml['metadata']['namespace'] == 'test-namespace'
     assert modified_yaml['metadata']['name'] == 'test-prefix-sample-topic'
 
 def test_modify_topic_yaml_with_default_config(initial_yaml_file, tmp_path):
-    # Call the function to modify the topic YAML without any configuration file (use defaults)
     output_directory = tmp_path
     modify_topic_yaml_with_config(str(initial_yaml_file), str(output_directory), "non_existing_config.yaml")
 
-    # Check if the output file is created with the default settings
     expected_filename = output_directory / "sample-topic.yaml"
     assert os.path.exists(expected_filename)
 
-    # Load the modified YAML file to check its content
     with open(expected_filename, 'r') as modified_file:
         modified_yaml = yaml.safe_load(modified_file)
 
-    # Assertions to check if default namespace and prefix are applied correctly
     assert modified_yaml['metadata']['namespace'] == 'default'
     assert modified_yaml['metadata']['name'] == 'sample-topic'
