@@ -8,6 +8,8 @@ Simple form, sending POST requests to the backend.
 
 Preliminary validation happens in the form. 
 
+CD into the `frontend` folder.
+
 Prepare frontend: `npm install`
 
 Run frontend: `npm start`
@@ -28,6 +30,12 @@ prefix: new-topic-prefix-
 repository_name: your-org/topics-for-domain
 github_token: github_pat_1234567890
 ```
+
+CD into the `backend` folder
+
+Install dependencies `pip install -r requirements.txt`
+
+Run backend: `python app.py`
 
 #### Create CR from template
 
