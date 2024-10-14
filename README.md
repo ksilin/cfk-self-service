@@ -1,6 +1,10 @@
 # cfk self-service
 
-A simplified example of self-service for generation of CfK topic resources. 
+A simplified example of self-service for generation of CfK topic resources for a GitOps workflow.
+
+<img src="https://github.com/user-attachments/assets/89bee193-d709-4a39-9864-434fd3802581" alt="Create Topic UI" width="400">
+
+![Screenshot 2024-10-14 at 10 01 44|800](https://github.com/user-attachments/assets/294b91d9-ea07-4ac2-ac9e-69ddcc311ccd)
 
 ### UI
 
